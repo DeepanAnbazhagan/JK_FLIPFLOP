@@ -11,24 +11,24 @@ Vivado 2023.1 software.
 ![image](https://github.com/RESMIRNAIR/JK_FLIPFLOP/assets/154305926/04d4ff52-ae20-4e08-bd70-58137b129890)
 # Program:
      module jk_ff (q, q_bar, j,k, clk, reset);        
-  input j,k,clk, reset;
-  output reg q;
-  output q_bar;
-  always@(posedge clk) begin
-    if(!reset)
-      q <= 0;
-    else 
-  begin
-      case({j,k})              
-      2'b00: q <= q; // No change
-      2'b01: q <= 1'b0; // reset
-      2'b10: q <= 1'b1; // set
-      2'b11: q <= ~q; // Toggle                       
-      endcase
-    end
-  end
-  assign q_bar = ~q;
-endmodule
+     input j,k,clk, reset;
+     output reg q;
+     output q_bar;
+     always@(posedge clk) begin
+     if(!reset)
+            q <= 0;
+     else 
+     begin
+        case({j,k})              
+             2'b00: q <= q; // No change
+             2'b01: q <= 1'b0; // reset
+             2'b10: q <= 1'b1; // set
+             2'b11: q <= ~q; // Toggle                       
+          endcase
+        end
+     end
+         assign q_bar = ~q;
+     endmodule
 
 # Elaborated Design:
 <img width="960" alt="Screenshot 2024-03-30 115309" src="https://github.com/DeepanAnbazhagan/JK_FLIPFLOP/assets/164902865/5d75ac70-3177-49bb-9919-ab572e93b0dd">
